@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+
+<fx:root maxHeight="-Infinity" minHeight="-Infinity" styleClass="category" stylesheets="@../../css/main.css" type="VBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Label" />
+      <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Line>
+      <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" vbarPolicy="NEVER">
+         <content>
+            <HBox fx:id="coverList" minHeight="0.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </HBox>
+         </content>
+      </ScrollPane>
+   </children>
+</fx:root>

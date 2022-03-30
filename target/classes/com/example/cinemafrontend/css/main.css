@@ -1,0 +1,62 @@
+#menu-bar{
+    -fx-background-color: #343535;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: WHITE;
+}
+
+.menu-bar-list{
+    -fx-background-color: #4d4e4f;
+}
+
+.menu-bar-button{
+    -fx-background-color: #343535;
+    -fx-background-insets: 2 5 2 5;
+}
+
+.menu-bar-button .label{
+    -fx-font-size: 25;
+    -fx-text-fill: #cacdce;
+    -fx-font-family: 'Signika';
+}
+
+.content {
+    -fx-background-color: #a8a8a8;
+}
+
+.scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+.scroll-pane{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+/*Movies*/
+#movies-content{
+    -fx-background-color: black;
+}
+
+/*Category*/
+.category{
+
+}
+
+.category .label{
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/*Cover*/
+.cover {
+    -fx-background-color: black;
+}
+
+.cover .image-view:hover{
+    -fx-opacity: 0.7;
+}
+.cover .label{
+    -fx-font-size: 30;
+    -fx-font-weight: BOLD;
+}
