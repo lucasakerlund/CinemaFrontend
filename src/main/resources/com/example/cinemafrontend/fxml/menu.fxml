@@ -6,36 +6,50 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinemafrontend.controllers.MenuController">
-   <left>
-      <VBox id="menu-bar" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <VBox prefWidth="399.0" styleClass="menu-bar-list">
-               <children>
-                  <HBox fx:id="moviesBox" alignment="CENTER" prefHeight="50.0" styleClass="menu-bar-button">
-                     <children>
-                        <Label alignment="TOP_LEFT" text="MOVIES" />
-                     </children>
-                  </HBox>
-                  <HBox fx:id="scheduleBox" alignment="CENTER" prefHeight="50.0" styleClass="menu-bar-button">
-                     <children>
-                        <Label alignment="TOP_LEFT" text="SCHEDULE" />
-                     </children>
-                  </HBox>
-                  <HBox fx:id="ticketsBox" alignment="CENTER" prefHeight="50.0" styleClass="menu-bar-button">
-                     <children>
-                        <Label alignment="TOP_LEFT" text="TICKETS" />
-                     </children>
-                  </HBox>
-               </children>
-               <padding>
-                  <Insets bottom="2.0" top="2.0" />
-               </padding>
-            </VBox>
-         </children>
-      </VBox>
-   </left>
+<BorderPane maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinemafrontend.controllers.MenuController">
    <center>
-      <BorderPane fx:id="content" styleClass="content" BorderPane.alignment="CENTER" />
+      <BorderPane>
+         <left>
+            <VBox id="menu-bar" minWidth="-Infinity" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefWidth="399.0" styleClass="menu-bar-list">
+                     <children>
+                        <HBox id="menu-bar-button" fx:id="moviesBox" alignment="CENTER" prefHeight="50.0">
+                           <children>
+                              <Label alignment="TOP_LEFT" text="FILMER" />
+                           </children>
+                        </HBox>
+                        <HBox id="menu-bar-button" fx:id="scheduleBox" alignment="CENTER" prefHeight="50.0">
+                           <children>
+                              <Label alignment="TOP_LEFT" text="SCHEMAN" />
+                           </children>
+                        </HBox>
+                        <HBox id="menu-bar-button" fx:id="ticketsBox" alignment="CENTER" prefHeight="50.0">
+                           <children>
+                              <Label alignment="TOP_LEFT" text="BILJETTER" />
+                           </children>
+                        </HBox>
+                        <HBox id="menu-bar-button" fx:id="accountBox" alignment="CENTER" layoutX="10.0" layoutY="112.0" prefHeight="50.0">
+                           <children>
+                              <Label alignment="TOP_LEFT" text="KONTO" />
+                           </children>
+                        </HBox>
+                        <HBox id="menu-bar-button" fx:id="staffBox" alignment="CENTER" layoutX="10.0" layoutY="162.0" prefHeight="50.0">
+                           <children>
+                              <Label alignment="TOP_LEFT" text="PERSONAL" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="2.0" top="2.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <BorderPane fx:id="content" styleClass="content" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
    </center>
 </BorderPane>

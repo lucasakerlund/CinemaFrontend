@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="account" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinemafrontend.controllers.AccountController">
+   <top>
+      <VBox alignment="CENTER" styleClass="account-header" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label fx:id="loginErrorLabel" styleClass="account-login-error" text="Kontot finns inte" visible="false" />
+                  <TextField id="name-input" fx:id="loginInput" />
+                  <Label id="login-button" fx:id="loginButton" text="Logga in" />
+               </children>
+            </HBox>
+            <Label id="register-button" fx:id="registerButton" text="Bli medlem" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </VBox>
+   </top>
+   <center>
+      <VBox fx:id="content" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="account-content" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <VBox alignment="TOP_RIGHT">
+                     <children>
+                        <Label alignment="CENTER" styleClass="account-content-label" text="Namn:" textAlignment="CENTER" />
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="account-content-label" text="Mail:" textAlignment="CENTER" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label fx:id="nameLabel" alignment="CENTER" styleClass="account-content-value" text="Namn här" />
+                        <Label fx:id="mailLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="account-content-value" text="Mail här" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="40.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

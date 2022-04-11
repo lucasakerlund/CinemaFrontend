@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root prefHeight="400.0" prefWidth="400.0" styleClass="create-account" stylesheets="@../css/main.css" type="BorderPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="create-account-text" text="Bli medlem" />
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <VBox alignment="TOP_RIGHT" spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER" styleClass="create-account-content-label" text="Namn:" textAlignment="CENTER" />
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="create-account-content-label" text="Mail:" textAlignment="CENTER" />
+                        <Label alignment="CENTER" layoutX="26.0" layoutY="50.0" styleClass="create-account-content-label" text="Personnummer:" textAlignment="CENTER" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="14.0">
+                     <children>
+                        <TextField fx:id="nameInput" styleClass="create-account-content-input" />
+                        <TextField fx:id="mailInput" layoutX="10.0" layoutY="10.0" styleClass="create-account-content-input" />
+                        <TextField fx:id="securityNumberInput" layoutX="10.0" layoutY="47.0" styleClass="create-account-content-input" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="30.0" />
+         </padding>
+      </VBox>
+   </center>
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="errorLabel" styleClass="create-account-error" text="Alla rutor måste vara ifyllda" visible="false" />
+            <Label fx:id="registerButton" layoutX="10.0" layoutY="10.0" styleClass="create-account-create" text="Registrera" />
+         </children>
+      </VBox>
+   </bottom>
+</fx:root>

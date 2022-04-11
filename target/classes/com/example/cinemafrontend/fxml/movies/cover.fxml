@@ -2,22 +2,60 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-
-<fx:root styleClass="cover" stylesheets="@../../css/main.css" type="StackPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="cover" stylesheets="@../../css/main.css" type="StackPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="265.0" fitWidth="186.0" pickOnBounds="true">
+      <ImageView fx:id="imageView" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <image>
-            <Image url="@../../images/spiderman.jpg" />
+            <Image url="@../../images/spiderman_selected.jpg" />
          </image>
       </ImageView>
-      <Label ellipsisString="" text="Spider-Man" textFill="WHITE" wrapText="true" StackPane.alignment="TOP_CENTER">
-         <padding>
-            <Insets top="20.0" />
-         </padding>
-      </Label>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="237.0" prefWidth="600.0">
+                     <children>
+                        <Label prefWidth="1000.0" text="Spider-Man">
+                           <padding>
+                              <Insets left="40.0" top="40.0" />
+                           </padding>
+                        </Label>
+                        <VBox alignment="BOTTOM_CENTER" prefWidth="1000.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label id="age-restriction-label" text="13+" />
+                              <Label id="book-button" fx:id="bookButton" layoutX="10.0" layoutY="10.0" text="BOKA">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="sdfgsdgsdgdsgdfg" wrapText="true" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" />
+               </padding>
+            </TextArea>
+         </bottom>
+      </BorderPane>
    </children>
 </fx:root>

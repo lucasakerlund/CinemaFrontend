@@ -18,11 +18,17 @@ public class MenuController {
     private HBox scheduleBox;
     @FXML
     private HBox ticketsBox;
+    @FXML
+    private HBox accountBox;
+    @FXML
+    private HBox staffBox;
 
     private HashMap<String, MenuButton> buttons;
 
     @FXML
     private BorderPane content;
+
+    private MenuButton focused;
 
     @FXML
     public void initialize() throws Exception {
@@ -31,13 +37,24 @@ public class MenuController {
         buttons.put("movies", new MenuButton(moviesBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/movies.fxml"))));
         buttons.put("schedule", new MenuButton(scheduleBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/schedule.fxml"))));
         buttons.put("tickets", new MenuButton(ticketsBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/tickets.fxml"))));
+        buttons.put("account", new MenuButton(accountBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/account.fxml"))));
+        buttons.put("staff", new MenuButton(staffBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/staff.fxml"))));
 
         openPage(buttons.get("movies").getContent());
+        setFocus(buttons.get("movies"));
     }
 
     public void openPage(Parent page){
         content.setCenter(null);
         content.setCenter(page);
+    }
+
+    private void setFocus(MenuButton button){
+        if(focused != null){
+            focused.box.setId("menu-bar-button");
+        }
+        focused = button;
+        focused.box.setId("menu-bar-button-focused");
     }
 
     private class MenuButton {
@@ -57,8 +74,8 @@ public class MenuController {
 
         private void addClickListener() {
             box.setOnMousePressed(e -> {
+                setFocus(this);
                 openPage(content);
-                System.out.println(1);
             });
         }
 
