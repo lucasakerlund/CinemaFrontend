@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<fx:root maxWidth="255.0" styleClass="ticket-item" stylesheets="@../../css/main.css" type="StackPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="357.0" maxWidth="255.0" styleClass="ticket-item" stylesheets="@../../css/main.css" type="StackPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="imageView" fitHeight="357.0" fitWidth="255.0" pickOnBounds="true">
          <image>
@@ -18,41 +18,45 @@
       </ImageView>
       <VBox alignment="TOP_CENTER" spacing="10.0">
          <children>
-            <Label fx:id="titleLabel" styleClass="ticket-item-title" text="Titel" />
-            <ScrollPane hbarPolicy="NEVER" maxHeight="212.0">
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="353.0" prefHeight="353.0" prefWidth="255.0">
                <content>
-                  <HBox alignment="CENTER" spacing="10.0">
+                  <VBox alignment="CENTER">
                      <children>
-                        <VBox>
+                        <Label fx:id="titleLabel" styleClass="ticket-item-title" text="Titel" textAlignment="CENTER" wrapText="true" />
+                        <HBox alignment="CENTER" spacing="10.0">
                            <children>
-                              <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="ticket-item-label" text="Datum:" textAlignment="CENTER" />
-                              <Label alignment="CENTER" layoutX="10.0" layoutY="40.0" styleClass="ticket-item-label" text="Tid:" textAlignment="CENTER" />
-                              <Label alignment="CENTER" styleClass="ticket-item-label" text="Salong:" textAlignment="CENTER" />
-                              <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="ticket-item-label" text="Vuxna:" textAlignment="CENTER" />
-                              <Label alignment="CENTER" layoutX="26.0" layoutY="40.0" styleClass="ticket-item-label" text="Barn:" textAlignment="CENTER" />
-                              <Label alignment="CENTER" layoutX="26.0" layoutY="70.0" styleClass="ticket-item-label" text="Pensionärer:" textAlignment="CENTER" />
-                              <Label alignment="CENTER" layoutX="10.0" layoutY="100.0" styleClass="ticket-item-label" text="Studenter:" textAlignment="CENTER" />
+                              <VBox>
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="ticket-item-label" text="Datum:" textAlignment="CENTER" />
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="40.0" styleClass="ticket-item-label" text="Tid:" textAlignment="CENTER" />
+                                    <Label alignment="CENTER" styleClass="ticket-item-label" text="Salong:" textAlignment="CENTER" />
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="ticket-item-label" text="Vuxna:" textAlignment="CENTER" />
+                                    <Label alignment="CENTER" layoutX="26.0" layoutY="40.0" styleClass="ticket-item-label" text="Barn:" textAlignment="CENTER" />
+                                    <Label alignment="CENTER" layoutX="26.0" layoutY="70.0" styleClass="ticket-item-label" text="Pensionärer:" textAlignment="CENTER" />
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="100.0" styleClass="ticket-item-label" text="Studenter:" textAlignment="CENTER" />
+                                 </children>
+                              </VBox>
+                              <VBox>
+                                 <children>
+                                    <Label fx:id="dateLabel" alignment="CENTER" layoutX="10.0" layoutY="130.0" styleClass="ticket-item-value" text="0" />
+                                    <Label fx:id="timeLabel" alignment="CENTER" layoutX="10.0" layoutY="160.0" styleClass="ticket-item-value" text="0" />
+                                    <Label fx:id="salonLabel" alignment="CENTER" styleClass="ticket-item-value" text="Namn här" />
+                                    <Label fx:id="adultsLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="ticket-item-value" text="0" />
+                                    <Label fx:id="childrenLabel" alignment="CENTER" layoutX="10.0" layoutY="40.0" styleClass="ticket-item-value" text="0" />
+                                    <Label fx:id="seniorsLabel" alignment="CENTER" layoutX="10.0" layoutY="70.0" styleClass="ticket-item-value" text="0" />
+                                    <Label fx:id="studentsLabel" alignment="CENTER" layoutX="10.0" layoutY="100.0" styleClass="ticket-item-value" text="0" />
+                                 </children>
+                              </VBox>
                            </children>
-                        </VBox>
-                        <VBox>
-                           <children>
-                              <Label fx:id="dateLabel" alignment="CENTER" layoutX="10.0" layoutY="130.0" styleClass="ticket-item-value" text="0" />
-                              <Label fx:id="timeLabel" alignment="CENTER" layoutX="10.0" layoutY="160.0" styleClass="ticket-item-value" text="0" />
-                              <Label fx:id="salonLabel" alignment="CENTER" styleClass="ticket-item-value" text="Namn här" />
-                              <Label fx:id="adultsLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="ticket-item-value" text="0" />
-                              <Label fx:id="childrenLabel" alignment="CENTER" layoutX="10.0" layoutY="40.0" styleClass="ticket-item-value" text="0" />
-                              <Label fx:id="seniorsLabel" alignment="CENTER" layoutX="10.0" layoutY="70.0" styleClass="ticket-item-value" text="0" />
-                              <Label fx:id="studentsLabel" alignment="CENTER" layoutX="10.0" layoutY="100.0" styleClass="ticket-item-value" text="0" />
-                           </children>
-                        </VBox>
+                           <padding>
+                              <Insets left="15.0" right="15.0" />
+                           </padding>
+                        </HBox>
                      </children>
-                     <padding>
-                        <Insets left="15.0" right="15.0" />
-                     </padding>
-                  </HBox>
+                  </VBox>
                </content>
             </ScrollPane>
-            <HBox alignment="CENTER" prefHeight="57.0" prefWidth="200.0" styleClass="ticket-item-footer-box" VBox.vgrow="ALWAYS">
+            <HBox alignment="CENTER" minHeight="57.0" prefHeight="57.0" prefWidth="200.0" styleClass="ticket-item-footer-box" VBox.vgrow="ALWAYS">
                <children>
                   <Label fx:id="removeButton" layoutX="129.0" layoutY="23.0" styleClass="ticket-item-remove" text="Ta bort" />
                </children>
