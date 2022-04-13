@@ -22,10 +22,13 @@ public class TicketSelectorItem extends HBox {
     @FXML
     private Label studentButton;
 
+    private TicketSelector parent;
+
     private Type type;
     private Label focused;
 
-    public TicketSelectorItem() throws IOException {
+    public TicketSelectorItem(TicketSelector parent) throws IOException {
+        this.parent = parent;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/booking/ticketSelectorItem.fxml"));
         loader.setRoot(this);
         loader.setController(this);
@@ -50,18 +53,22 @@ public class TicketSelectorItem extends HBox {
         adultButton.setOnMousePressed(e -> {
             type = Type.ADULT;
             setFocus(adultButton);
+            parent.calculateCost();
         });
         childButton.setOnMousePressed(e -> {
             type = Type.CHILD;
             setFocus(childButton);
+            parent.calculateCost();
         });
         seniorButton.setOnMousePressed(e -> {
             type = Type.SENIOR;
             setFocus(seniorButton);
+            parent.calculateCost();
         });
         studentButton.setOnMousePressed(e -> {
             type = Type.STUDENT;
             setFocus(studentButton);
+            parent.calculateCost();
         });
     }
 

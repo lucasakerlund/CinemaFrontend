@@ -100,7 +100,7 @@ public class SalonView extends BorderPane {
             try {
                 TicketSelector selector = new TicketSelector(scheduleID, this);
                 for (Chair selectedChair : selectedChairs) {
-                    selector.addItem(new TicketSelectorItem());
+                    selector.addItem(new TicketSelectorItem(selector));
                 }
                 SubSceneHandler.inst().show(selector);
             } catch (IOException ex) {

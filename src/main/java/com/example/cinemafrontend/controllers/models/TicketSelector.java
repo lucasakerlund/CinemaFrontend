@@ -12,12 +12,15 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class TicketSelector extends BorderPane {
 
     @FXML
     private VBox box;
+    @FXML
+    private Label costLabel;
     @FXML
     private Label confirmButton;
     @FXML
@@ -26,6 +29,8 @@ public class TicketSelector extends BorderPane {
     private int scheduleID;
     private SalonView parent;
     private List<TicketSelectorItem> tickets;
+
+    private int cost;
 
     public TicketSelector(int scheduleID, SalonView salon) throws IOException {
         this.scheduleID = scheduleID;
@@ -37,6 +42,31 @@ public class TicketSelector extends BorderPane {
         loader.load();
 
         addConfirmListener();
+    }
+
+    public void calculateCost(){
+        HashMap<String, Integer> prices =  BackendCaller.inst().getPrices();
+        int sum = 0;
+        for (TicketSelectorItem ticket : tickets) {
+            if(ticket.getType() == null){
+                continue;
+            }
+            switch(ticket.getType()){
+                case ADULT:
+                    sum+=prices.get("adult_ticket");
+                    break;
+                case CHILD:
+                    sum+=prices.get("child_ticket");
+                    break;
+                case SENIOR:
+                    sum+=prices.get("senior_ticket");
+                    break;
+                case STUDENT:
+                    sum+=prices.get("student_ticket");
+                    break;
+            }
+        }
+        costLabel.setText(sum+"kr");
     }
 
     public void addItem(TicketSelectorItem item){

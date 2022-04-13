@@ -84,6 +84,17 @@ public class BackendCaller {
         }
     }
 
+    public HashMap<String, Integer> getPrices(){
+        String data = request("api/v1/prices");
+        JSONArray array = new JSONArray(data);
+        HashMap<String, Integer> output = new HashMap<>();
+        for (int i = 0; i < array.length(); i++) {
+            JSONObject object = array.getJSONObject(i);
+            output.put(object.getString("product"), object.getInt("price"));
+        }
+        return output;
+    }
+
     /**
      * @return json object - contains key:
      * schedule_id, date, time, movie_id, salon
