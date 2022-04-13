@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<fx:root alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="350.0" spacing="10.0" styleClass="ticket-selector-item" stylesheets="@../../css/main.css" type="HBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="adultButton" text="Vuxen" />
+      <Label fx:id="childButton" layoutX="10.0" layoutY="10.0" text="Barn" />
+      <Label fx:id="seniorButton" layoutX="130.0" layoutY="19.0" text="Pensionär" />
+      <Label fx:id="studentButton" layoutX="38.0" layoutY="10.0" text="Student" />
+   </children>
+</fx:root>

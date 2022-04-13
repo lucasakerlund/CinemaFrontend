@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="salon" stylesheets="@../../css/main.css" type="BorderPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="errorLabel" styleClass="salon-error" text="Välj minst en plats" visible="false" />
+            <Label id="salon-confirm" fx:id="confirmButton" layoutX="384.0" layoutY="46.0" text="Nästa" />
+         </children>
+         <padding>
+            <Insets bottom="15.0" right="30.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets bottom="10.0" left="50.0" right="50.0" />
+   </padding>
+   <top>
+      <VBox fx:id="chairBox" alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Label id="salon-text" text="Välj platser" />
+            <StackPane id="salon-screen" prefHeight="40.0" prefWidth="490.0">
+               <children>
+                  <Label text="SCREEN" />
+               </children>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </StackPane>
+         </children>
+         <padding>
+            <Insets top="30.0" />
+         </padding>
+      </VBox>
+   </top>
+</fx:root>
