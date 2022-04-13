@@ -19,7 +19,7 @@ public class CreateStaffTaskStaffItem extends HBox {
     public CreateStaffTaskStaffItem(Staff staff, CreateStaffTask parent) throws IOException {
         this.staff = staff;
         this.parent = parent;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/createStaffTaskStaffItem.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/staff/createStaffTaskStaffItem.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         loader.load();

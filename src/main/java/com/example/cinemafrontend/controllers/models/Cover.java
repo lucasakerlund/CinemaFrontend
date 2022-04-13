@@ -6,6 +6,7 @@ import com.example.cinemafrontend.abstracts.SubSceneHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
@@ -21,6 +22,12 @@ public class Cover extends StackPane {
     @FXML
     private ImageView imageView;
     @FXML
+    private Label titleLabel;
+    @FXML
+    private Label ageLabel;
+    @FXML
+    private TextArea descriptionLabel;
+    @FXML
     private Label bookButton;
 
     public Cover(Movie movie) throws IOException {
@@ -31,6 +38,9 @@ public class Cover extends StackPane {
         loader.load();
 
         imageView.setImage(new Image(movie.getCoverImage() == "" ? "https://www.prokerala.com/movies/assets/img/no-poster-available.jpg" : movie.getCoverImage()));
+        titleLabel.setText(movie.getTitle());
+        ageLabel.setText(movie.getAgeRestriction()+"+");
+        descriptionLabel.setText(movie.getDescription());
 
         addBookListener();
     }

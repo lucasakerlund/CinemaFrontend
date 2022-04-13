@@ -9,14 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import javafx.util.converter.DateTimeStringConverter;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 public class CreateStaffTask extends BorderPane {
 
@@ -37,7 +33,7 @@ public class CreateStaffTask extends BorderPane {
     private CreateStaffTaskStaffItem focused;
 
     public CreateStaffTask() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/createStaffTask.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/staff/createStaffTask.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         loader.load();
@@ -75,7 +71,7 @@ public class CreateStaffTask extends BorderPane {
                 errorLabel.setVisible(true);
                 return;
             }
-            if(!timeInput.getText().matches("((0|1)[0-9]|(2)[0-3]):[0-9][0-9]")){
+            if(!timeInput.getText().matches("((0|1)[0-9]|(2)[0-3]):[0-5][0-9]")){
                 errorLabel.setText("Tiden måste gå enligt 24h klockan");
                 errorLabel.setVisible(true);
                 return;
@@ -91,7 +87,6 @@ public class CreateStaffTask extends BorderPane {
         });
         try {
             for(Staff staff : BackendCaller.inst().getStaffs()) {
-                System.out.println(1);
                 staffsBox.getChildren().add(new CreateStaffTaskStaffItem(staff, this));
             }
         } catch (IOException e) {

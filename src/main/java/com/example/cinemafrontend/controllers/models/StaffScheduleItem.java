@@ -1,9 +1,9 @@
 package com.example.cinemafrontend.controllers.models;
 
-import com.example.cinemafrontend.controllers.StaffController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -17,10 +17,10 @@ public class StaffScheduleItem extends VBox {
     @FXML
     private Label nameLabel;
     @FXML
-    private Label taskLabel;
+    private TextArea taskLabel;
 
     public StaffScheduleItem(String date, String time, String name, String task) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/StaffScheduleItem.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/staff/StaffScheduleItem.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         loader.load();

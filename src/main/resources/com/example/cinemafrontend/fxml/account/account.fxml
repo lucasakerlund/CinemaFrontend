@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="account" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinemafrontend.controllers.AccountController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="account" stylesheets="@../../css/main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinemafrontend.controllers.AccountController">
    <top>
       <VBox alignment="CENTER" styleClass="account-header" BorderPane.alignment="CENTER">
          <children>

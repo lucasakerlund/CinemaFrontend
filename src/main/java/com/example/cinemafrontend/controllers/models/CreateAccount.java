@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
-import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -25,7 +24,7 @@ public class CreateAccount extends BorderPane {
     private Label registerButton;
 
     public CreateAccount() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/createAccount.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/account/createAccount.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         loader.load();

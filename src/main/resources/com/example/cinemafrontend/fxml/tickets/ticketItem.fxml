@@ -9,12 +9,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<fx:root maxWidth="255.0" styleClass="ticket-item" stylesheets="@../css/main.css" type="StackPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxWidth="255.0" styleClass="ticket-item" stylesheets="@../../css/main.css" type="StackPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="imageView" fitHeight="357.0" fitWidth="255.0" pickOnBounds="true">
          <image>
-            <Image url="@../images/spiderman.jpg" />
+            <Image url="@../../images/spiderman.jpg" />
          </image>
       </ImageView>
       <VBox alignment="TOP_CENTER" spacing="10.0">
@@ -55,7 +54,7 @@
             </ScrollPane>
             <HBox alignment="CENTER" prefHeight="57.0" prefWidth="200.0" styleClass="ticket-item-footer-box" VBox.vgrow="ALWAYS">
                <children>
-                  <Label fx:id="removeButton" layoutX="129.0" layoutY="23.0" styleClass="ticket-item-edit" text="Ta bort" />
+                  <Label fx:id="removeButton" layoutX="129.0" layoutY="23.0" styleClass="ticket-item-remove" text="Ta bort" />
                </children>
             </HBox>
          </children>

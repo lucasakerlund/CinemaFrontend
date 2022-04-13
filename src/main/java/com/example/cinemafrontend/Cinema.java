@@ -22,6 +22,7 @@ public class Cinema extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+
         instance = this;
         this.stage = stage;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/menu.fxml"));

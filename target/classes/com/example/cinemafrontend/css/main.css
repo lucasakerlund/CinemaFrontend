@@ -74,6 +74,55 @@
     -fx-background-color: #121213;
 }
 
+/*Schedule*/
+.schedule{
+    -fx-background-color: #121213;
+}
+
+.schedule-item{
+    -fx-background-color: black;
+    -fx-border-width: 1;
+    -fx-border-color: white;
+}
+
+.schedule-item .image-view{
+    -fx-opacity: .4;
+}
+
+.schedule-item-title{
+    -fx-font-size: 30;
+    -fx-text-fill: white;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: white;
+}
+
+.schedule-item-label{
+    -fx-font-size: 20;
+    -fx-text-fill: #9c9c9c;
+}
+.schedule-item-value{
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+}
+
+.schedule-item-footer-box{
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: white;
+}
+
+.schedule-item-book{
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+    -fx-border-width: 2;
+    -fx-padding: 0 3 0 3;
+    -fx-border-color: white;
+}
+
+.schedule-item-book:hover{
+    -fx-text-fill: green;
+    -fx-border-color: green;
+}
+
 /*Tickets*/
 .tickets{
     -fx-background-color: #121213;
@@ -110,7 +159,7 @@
     -fx-border-color: white;
 }
 
-.ticket-item-edit{
+.ticket-item-remove{
     -fx-text-fill: white;
     -fx-font-size: 20;
     -fx-border-width: 2;
@@ -118,7 +167,7 @@
     -fx-border-color: white;
 }
 
-.ticket-item-edit:hover{
+.ticket-item-remove:hover{
     -fx-text-fill: green;
     -fx-border-color: green;
 }
@@ -245,10 +294,15 @@
 .staff-schedule-item-value{
     -fx-font-size: 20;
     -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+.staff-schedule-item-value .content{
+    -fx-background-color: #3a3a3b;
+    -fx-background-radius: 0;
 }
 
 /*Create Task*/
-
 .create-staff-task{
     -fx-background-color: #121213;
     -fx-border-width: 1;

@@ -26,7 +26,7 @@ public class TicketSelectorItem extends HBox {
     private Label focused;
 
     public TicketSelectorItem() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/ticketSelectorItem.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/booking/ticketSelectorItem.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         loader.load();

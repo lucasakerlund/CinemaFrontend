@@ -2,6 +2,7 @@ package com.example.cinemafrontend.abstracts;
 
 import com.example.cinemafrontend.controllers.models.Chair;
 import com.example.cinemafrontend.model.Movie;
+import com.example.cinemafrontend.model.Schedule;
 import com.example.cinemafrontend.model.Staff;
 import com.example.cinemafrontend.model.StaffSchedule;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -114,6 +115,17 @@ public class BackendCaller {
         return movies;
     }
 
+    public Movie getMovieById(int movieId){
+        String data = request("api/v1/movies/" + movieId);
+        JSONObject object = new JSONObject(data);
+        return new Movie(object.getInt("movie_id"),
+                object.getString("title"),
+                object.getString("description"),
+                object.getInt("age_restriction"),
+                object.getString("category_cover_image"),
+                object.getString("cover_image"));
+    }
+
     public int[] getGenreIdsByMovieId(int movie_id){
         String data = request("api/v1/movie_genre/"+movie_id);
         return new Gson().fromJson(data, int[].class);
@@ -180,6 +192,9 @@ public class BackendCaller {
 
     public Staff getStaff(String securityNumber){
         String data = request("api/v1/staffs/security_number/" + securityNumber);
+        if(data.equals("")){
+            return null;
+        }
         JSONObject object = new JSONObject(data);
         return new Staff(object.getInt("staff_id"),
                 object.getString("name"),
@@ -200,6 +215,21 @@ public class BackendCaller {
                     object.getString("date"),
                     object.getString("time"),
                     object.getString("task")));
+        }
+        return output;
+    }
+
+    public List<Schedule> getSchedules(){
+        String data = request("api/v1/schedules");
+        JSONArray array = new JSONArray(data);
+        List<Schedule> output = new ArrayList<>();
+        for (int i = 0; i < array.length(); i++) {
+            JSONObject object = array.getJSONObject(i);
+            output.add(new Schedule(object.getInt("schedule_id"),
+                    object.getString("date"),
+                    object.getString("time"),
+                    object.getInt("movie_id"),
+                    object.getInt("salon_id")));
         }
         return output;
     }

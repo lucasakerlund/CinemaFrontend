@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="tickets" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinemafrontend.controllers.TicketsController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="schedule" stylesheets="@../../css/main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinemafrontend.controllers.ScheduleController">
    <center>
       <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" BorderPane.alignment="CENTER">
          <content>

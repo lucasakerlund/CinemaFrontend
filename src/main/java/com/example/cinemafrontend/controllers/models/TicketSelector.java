@@ -31,7 +31,7 @@ public class TicketSelector extends BorderPane {
         this.scheduleID = scheduleID;
         this.parent = salon;
         tickets = new ArrayList<>();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/ticketSelector.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/booking/ticketSelector.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         loader.load();

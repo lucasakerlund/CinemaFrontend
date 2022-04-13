@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.StackPane?>
 
-<fx:root styleClass="category-cover" stylesheets="@../../css/main.css" type="StackPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="265.0" maxWidth="186.0" styleClass="category-cover" stylesheets="@../../css/main.css" type="StackPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="imageView" fitHeight="265.0" fitWidth="186.0" pickOnBounds="true">
          <image>

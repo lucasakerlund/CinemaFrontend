@@ -23,14 +23,14 @@
                <children>
                   <HBox prefHeight="237.0" prefWidth="600.0">
                      <children>
-                        <Label prefWidth="1000.0" text="Spider-Man">
+                        <Label fx:id="titleLabel" prefWidth="1000.0" text="Spider-Man">
                            <padding>
                               <Insets left="40.0" top="40.0" />
                            </padding>
                         </Label>
                         <VBox alignment="BOTTOM_CENTER" prefWidth="1000.0" spacing="20.0" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label id="age-restriction-label" text="13+" />
+                              <Label id="age-restriction-label" fx:id="ageLabel" text="13+" />
                               <Label id="book-button" fx:id="bookButton" layoutX="10.0" layoutY="10.0" text="BOKA">
                                  <VBox.margin>
                                     <Insets />
@@ -50,7 +50,7 @@
             </VBox>
          </center>
          <bottom>
-            <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="sdfgsdgsdgdsgdfg" wrapText="true" BorderPane.alignment="CENTER">
+            <TextArea fx:id="descriptionLabel" editable="false" prefHeight="200.0" prefWidth="200.0" text="sdfgsdgsdgdsgdfg" wrapText="true" BorderPane.alignment="CENTER">
                <padding>
                   <Insets bottom="15.0" left="15.0" right="15.0" />
                </padding>

@@ -3,7 +3,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 
-<fx:root alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" styleClass="schedule-selector-item" stylesheets="@../css/main.css" type="HBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" styleClass="schedule-selector-item" stylesheets="@../../css/main.css" type="HBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label id="schedule-selector-item-date" fx:id="date" alignment="CENTER" prefWidth="1000.0" text="Label" />
       <Label id="schedule-selector-item-time" fx:id="time" alignment="CENTER" prefWidth="1000.0" text="Label" />

@@ -51,6 +51,7 @@ public class MoviesController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         categoryList.getChildren().add(category);
         return category;
     }

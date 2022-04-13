@@ -3,7 +3,6 @@ package com.example.cinemafrontend.controllers.models;
 import com.example.cinemafrontend.abstracts.SubSceneHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -22,7 +21,7 @@ public class ScheduleSelector extends BorderPane {
     private ScheduleSelectorItem focused;
 
     public ScheduleSelector() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/scheduleSelector.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/booking/scheduleSelector.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         loader.load();

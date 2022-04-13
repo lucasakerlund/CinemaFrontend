@@ -34,12 +34,11 @@ public class MenuController {
     public void initialize() throws Exception {
         instance = this;
         buttons = new HashMap<>();
-        buttons.put("movies", new MenuButton(moviesBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/movies.fxml"))));
-        buttons.put("schedule", new MenuButton(scheduleBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/schedule.fxml"))));
-        buttons.put("tickets", new MenuButton(ticketsBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/tickets.fxml"))));
-        buttons.put("account", new MenuButton(accountBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/account.fxml"))));
-        buttons.put("staff", new MenuButton(staffBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/staff.fxml"))));
-
+        buttons.put("movies", new MenuButton(moviesBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/movies/movies.fxml"))));
+        buttons.put("schedule", new MenuButton(scheduleBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/schedule/schedule.fxml"))));
+        buttons.put("tickets", new MenuButton(ticketsBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/tickets/tickets.fxml"))));
+        buttons.put("account", new MenuButton(accountBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/account/account.fxml"))));
+        buttons.put("staff", new MenuButton(staffBox, FXMLLoader.load(getClass().getResource("/com/example/cinemafrontend/fxml/staff/staff.fxml"))));
         openPage(buttons.get("movies").getContent());
         setFocus(buttons.get("movies"));
     }

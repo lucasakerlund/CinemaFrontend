@@ -26,8 +26,8 @@ public class CategoryCover extends StackPane {
         loader.setRoot(this);
         loader.setController(this);
         loader.load();
-
         imageView.setImage(new Image(movie.getCategoryCoverImage() == "" ? "https://www.prokerala.com/movies/assets/img/no-poster-available.jpg" : movie.getCategoryCoverImage()));
+        label.setText(movie.getTitle());
 
         addClickListener();
         addHoverListener();

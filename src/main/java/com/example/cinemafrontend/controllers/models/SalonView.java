@@ -40,7 +40,7 @@ public class SalonView extends BorderPane {
     public SalonView(int scheduleID) throws IOException {
         this.scheduleID = scheduleID;
         this.selectedChairs = new ArrayList<>();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/salon.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/booking/salon.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         loader.load();

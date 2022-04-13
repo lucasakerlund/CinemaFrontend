@@ -4,8 +4,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 
 import java.io.IOException;
 
@@ -22,7 +20,7 @@ public class ScheduleSelectorItem extends HBox {
     public ScheduleSelectorItem(int scheduleId, String date, String time, ScheduleSelector parent) throws IOException {
         this.scheduleId = scheduleId;
         this.parent = parent;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/scheduleSelectorItem.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/booking/scheduleSelectorItem.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         loader.load();

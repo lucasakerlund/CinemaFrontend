@@ -2,14 +2,12 @@ package com.example.cinemafrontend.controllers.models;
 
 import com.example.cinemafrontend.abstracts.BackendCaller;
 import com.example.cinemafrontend.controllers.TicketsController;
-import com.example.cinemafrontend.model.Movie;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
@@ -42,7 +40,7 @@ public class TicketItem extends StackPane {
     public TicketItem(int bookingId, String title, String image, String date, String time, int salon, int adults, int children, int seniors, int students) throws IOException {
         this.bookingId = bookingId;
         this.salon = salon;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/ticketItem.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cinemafrontend/fxml/tickets/ticketItem.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         loader.load();
