@@ -36,13 +36,16 @@
     -fx-background-color: #121213;
 }
 
-.scroll-pane .viewport{
+.scroll-pane > .viewport{
     -fx-background-color: transparent;
 }
 
 .scroll-pane{
     -fx-background-color: transparent;
-    -fx-background-insets: 0;
+}
+
+.scroll-bar{
+    -fx-background-color: transparent;
 }
 
 .scroll-pane:vertical, scroll-pane:horizontal{
@@ -54,7 +57,7 @@
 }
 
 .scroll-pane .track{
-    -fx-background-color: #121213;
+
 }
 
 .scroll-pane .increment-button{
@@ -79,6 +82,24 @@
     -fx-background-color: #121213;
 }
 
+.schedule-header{
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: white;
+}
+
+.schedule-header-create-button{
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+    -fx-border-width: 1;
+    -fx-border-color: white;
+    -fx-padding: 0 3 0 3;
+}
+
+.schedule-header-create-button:hover{
+    -fx-text-fill: green;
+    -fx-border-color: green;
+}
+
 .schedule-item{
     -fx-background-color: black;
     -fx-border-width: 1;
@@ -86,7 +107,7 @@
 }
 
 .schedule-item .image-view{
-    -fx-opacity: .4                               ;
+    -fx-opacity: .4;
 }
 
 .schedule-item-title{
@@ -119,6 +140,95 @@
 }
 
 .schedule-item-book:hover{
+    -fx-text-fill: green;
+    -fx-border-color: green;
+}
+
+/*Create Schedule*/
+.create-schedule{
+    -fx-background-color: #121213;
+    -fx-border-width: 1;
+    -fx-border-color: white;
+}
+
+.create-schedule-box{
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: white;
+}
+
+.create-schedule-box-label{
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+}
+
+.create-schedule-movies, .create-schedule-salons{
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: white;
+}
+
+.create-schedule-item{
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: white;
+}
+
+.create-schedule-item:hover{
+    -fx-background-color: #232323;
+}
+
+#create-schedule-movie-item-focused, #create-schedule-salon-item-focused{
+    -fx-background-color: #3a3a3b;
+}
+
+.create-schedule-item .label{
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+}
+
+.create-schedule-header{
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: white;
+}
+
+.create-schedule-field-label{
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+}
+
+.create-schedule-content-input{
+    -fx-background-color: #232323;
+    -fx-background-radius: 7;
+    -fx-border-width: 1;
+    -fx-border-radius: 7;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+}
+
+.create-schedule-content-input .content{
+    -fx-background-color: transparent;
+}
+
+.create-schedule-confirm-box{
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: white;
+}
+
+#create-schedule-error{
+    -fx-text-fill: red;
+    -fx-font-size: 20;
+}
+
+#create-schedule-confirm{
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+    -fx-border-width: 2;
+    -fx-padding: 0 3 0 3;
+    -fx-border-color: white;
+}
+
+#create-schedule-confirm:hover{
     -fx-text-fill: green;
     -fx-border-color: green;
 }

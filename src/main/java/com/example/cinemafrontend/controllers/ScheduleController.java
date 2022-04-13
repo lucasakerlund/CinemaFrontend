@@ -1,10 +1,13 @@
 package com.example.cinemafrontend.controllers;
 
 import com.example.cinemafrontend.abstracts.BackendCaller;
+import com.example.cinemafrontend.abstracts.SubSceneHandler;
+import com.example.cinemafrontend.controllers.models.CreateSchedule;
 import com.example.cinemafrontend.controllers.models.ScheduleItem;
 import com.example.cinemafrontend.model.Movie;
 import com.example.cinemafrontend.model.Schedule;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 
 import java.io.IOException;
@@ -15,11 +18,14 @@ public class ScheduleController {
 
     @FXML
     private FlowPane box;
+    @FXML
+    private Label createButton;
 
     @FXML
     public void initialize() {
         instance = this;
         loadSchedule();
+        setup();
     }
 
     public static ScheduleController inst(){
@@ -37,4 +43,15 @@ public class ScheduleController {
         }
     }
 
+    private void setup(){
+        createButton.setOnMousePressed(e -> {
+            try {
+                SubSceneHandler.inst().show(new CreateSchedule());
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+    }
+
 }
+

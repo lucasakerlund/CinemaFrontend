@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="create-schedule" stylesheets="@../../css/main.css" type="BorderPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <HBox>
+         <children>
+            <VBox alignment="TOP_CENTER" styleClass="create-schedule-movies">
+               <children>
+                  <HBox alignment="CENTER" styleClass="create-schedule-box">
+                     <children>
+                        <Label styleClass="create-schedule-box-label" text="Film" />
+                     </children>
+                  </HBox>
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="1000.0">
+                     <content>
+                        <VBox fx:id="movieBox" minWidth="-Infinity" prefWidth="180.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" styleClass="create-schedule-salons">
+               <children>
+                  <HBox alignment="CENTER" styleClass="create-schedule-box">
+                     <children>
+                        <Label styleClass="create-schedule-box-label" text="Salong">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="1000.0">
+                     <content>
+                        <VBox fx:id="salonBox" alignment="CENTER" minWidth="-Infinity" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </left>
+   <center>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0">
+               <children>
+                  <Label styleClass="create-schedule-header" text="Lägg till en filmvisning" />
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <VBox alignment="TOP_RIGHT" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" styleClass="create-schedule-field-label" text="Datum:" textAlignment="CENTER" />
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="create-schedule-field-label" text="Tid:" textAlignment="CENTER" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="14.0">
+                           <children>
+                              <TextField fx:id="dateInput" styleClass="create-schedule-content-input" />
+                              <TextField fx:id="timeInput" layoutX="10.0" layoutY="10.0" styleClass="create-schedule-content-input" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="30.0" />
+               </padding>
+            </VBox>
+         </center>
+         <bottom>
+            <VBox id="create-schedule-confirm-box" alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label id="create-schedule-error" fx:id="errorLabel" text="Du måste fylla i alla rutor." textAlignment="CENTER" visible="false" wrapText="true" />
+                  <Label id="create-schedule-confirm" fx:id="createButton" text="Skapa" />
+               </children>
+               <padding>
+                  <Insets bottom="15.0" top="5.0" />
+               </padding>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </center>
+</fx:root>

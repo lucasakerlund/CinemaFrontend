@@ -1,10 +1,7 @@
 package com.example.cinemafrontend.abstracts;
 
 import com.example.cinemafrontend.controllers.models.Chair;
-import com.example.cinemafrontend.model.Movie;
-import com.example.cinemafrontend.model.Schedule;
-import com.example.cinemafrontend.model.Staff;
-import com.example.cinemafrontend.model.StaffSchedule;
+import com.example.cinemafrontend.model.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.Gson;
 import org.json.JSONArray;
@@ -150,6 +147,17 @@ public class BackendCaller {
         return new Gson().fromJson(data, HashMap.class);
     }
 
+    public List<Salon> getSalons(){
+        String data = request("api/v1/salons");
+        JSONArray array = new JSONArray(data);
+        List<Salon> output = new ArrayList<>();
+        for (int i = 0; i < array.length(); i++) {
+            JSONObject object = array.getJSONObject(i);
+            output.add(new Salon(object.getInt("salon_id")));
+        }
+        return output;
+    }
+
     public String[] getTakenChairs(int scheduleID){
         String data = request("api/v1/booked_chairs/taken_chairs/" + scheduleID);
         return new Gson().fromJson(data, String[].class);
@@ -245,13 +253,21 @@ public class BackendCaller {
         return output;
     }
 
+    public void createSchedule(String date, String time, int movieId, int salonId){
+        JSONObject object = new JSONObject();
+        object.put("date", date);
+        object.put("time", time);
+        object.put("movie_id", movieId);
+        object.put("salon_id", salonId);
+        post("api/v1/schedules", object.toString());
+    }
+
     public void createTask(int staffId, String date, String time, String task){
         JSONObject object = new JSONObject();
         object.put("staff_id", staffId);
         object.put("date", date);
         object.put("time", time);
         object.put("task", task);
-        System.out.println(object.toString());
         post("api/v1/staff_schedules", object.toString());
     }
 
@@ -301,7 +317,6 @@ public class BackendCaller {
 
     public void deleteTicket(int bookingId){
         String data = request("api/v1/bookings/delete/" + bookingId);
-        System.out.println(data);
     }
 
     public boolean isSecurityNumberAvailable(String securityNumber){
